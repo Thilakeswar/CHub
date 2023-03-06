@@ -39,7 +39,7 @@ public class HttpClient
 		//url.openConnection()--> Initializes the connection instance
 		HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
-		//.setRequestMethod()--> Sets the method with which the URL should be invoked.
+		//.setRequestMethod()--> Sets the method with which the URL should be invoked.GET/POST/PUT/DELETE
 		httpURLConnection.setRequestMethod(method);
 
 		//.setConnectTimeout()--> Sets the Connection Timeout.
@@ -59,7 +59,10 @@ public class HttpClient
 				httpURLConnection.setRequestProperty(mapElement.getKey(), mapElement.getValue());
 			}
 		}
+
+		//Setting User-Agent as a Request Header
 		httpURLConnection.setRequestProperty("User-Agent", HttpConstants.USER_AGENT);
+
 		if(HttpConstants.METHOD_POST.equalsIgnoreCase(method)
 			|| HttpConstants.METHOD_PUT.equalsIgnoreCase(method)
 			|| HttpConstants.METHOD_DELETE.equalsIgnoreCase(method))
@@ -82,7 +85,9 @@ public class HttpClient
 
 		try
 		{
+
 			httpURLConnection.connect();
+
 			if(HttpConstants.METHOD_POST.equalsIgnoreCase(method)
 				|| HttpConstants.METHOD_PUT.equalsIgnoreCase(method))
 			{
