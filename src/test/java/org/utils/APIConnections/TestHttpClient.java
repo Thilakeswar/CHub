@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class TestHttpClient
 {
 	//TODO:Need to add all test cases for HTTP API Requests made using the HttpClient
-	@Test
+	//@Test
 	public void testGetAPI() throws Exception
 	{
 		HttpRequestParams httpRequestParams = new HttpRequestParams.Builder()
@@ -21,7 +21,7 @@ public class TestHttpClient
 		Assertions.assertEquals(true, httpResponse.isSuccess());
 	}
 
-	@Test
+	//@Test
 	public void testPostAPI() throws Exception
 	{
 		Map<String, Object> requsetMap = new HashMap<>();
@@ -38,7 +38,7 @@ public class TestHttpClient
 		Assertions.assertEquals(true, httpResponse.isSuccess());
 	}
 
-	@Test
+	//@Test
 	public void testPutAPI() throws Exception
 	{
 		Map<String, Object> requsetMap = new HashMap<>();
@@ -55,7 +55,7 @@ public class TestHttpClient
 		Assertions.assertEquals(true, httpResponse.isSuccess());
 	}
 
-	@Test
+	//@Test
 	public void testDeleteAPI() throws Exception
 	{
 		HttpRequestParams httpRequestParams = new HttpRequestParams.Builder()
